@@ -1,0 +1,15 @@
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/HelloWorld
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/HelloWorld.deps.json
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/HelloWorld.runtimeconfig.json
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/HelloWorld.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/HelloWorld.pdb
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.csproj.AssemblyReference.cache
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.AssemblyInfoInputs.cache
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.AssemblyInfo.cs
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.csproj.CoreCompileInputs.cache
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/refint/HelloWorld.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.pdb
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.genruntimeconfig.cache
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/ref/HelloWorld.dll
