@@ -59,15 +59,49 @@ namespace HelloWorld
             // bool myBool = true;
             // bool mySecondBool = false;
 
-            // ARRAYS
-            // You have to specify a length when you declare it
-            string[] myGroceryArray = new string[2];
-            myGroceryArray[0] = "Guacamole";
-            myGroceryArray[1] = "Queso";
+            // // ARRAYS
+            // // You have to specify a length when you declare it
+            // string[] myGroceryArray = new string[2];
+            // myGroceryArray[0] = "Guacamole";
+            // myGroceryArray[1] = "Queso";
 
-            Console.WriteLine(myGroceryArray[0]);
-            Console.WriteLine(myGroceryArray[1]);
-            Console.WriteLine(myGroceryArray[2]);
+            // Console.WriteLine(myGroceryArray[0]);
+            // Console.WriteLine(myGroceryArray[1]);
+            // // Console.WriteLine(myGroceryArray[2]);
+
+            // // You can set values on the same line as declaring an array
+            // string[] mySecondGroceryArray = { "Apples", "Eggs" };
+            // Console.WriteLine(mySecondGroceryArray[0]);
+            // Console.WriteLine(mySecondGroceryArray[1]);
+
+            // // LISTS
+            // // Don't have to specify a length or add any items
+            // List<string> myGroceryList = new List<String>(){ "Cheese", "Bread", "Milk" };
+            // Console.WriteLine(myGroceryList[0]);
+            // Console.WriteLine(myGroceryList[1]);
+
+            // myGroceryList.Add("Cream Cheese");
+            // Console.WriteLine(myGroceryList[2]);
+
+            // // IEnumerable
+            // // If we want to look at every element use this
+            // // We have to use a predeclared list
+            // IEnumerable<string> myGroceryIEnumerable = myGroceryList;
+            // // There are no indexes, we can't access values by index
+            // Console.WriteLine(myGroceryIEnumerable.First());
+
+            // // Two-dimensional array
+            // string[,] myTwoDimensionalArray = new string[,] {
+            //     { "Apples", "Eggs" },
+            //     { "Cheese", "Bread" }
+            // };
+            // Console.WriteLine(myTwoDimensionalArray[0,0]);
+
+            // // DICTIONARIES
+            // Dictionary<string, string[]> myDictionary = new Dictionary<string, string[]>() {
+            //     {"Dairy", new string[]{"Cheese", "Milk", "Yogurt"}}
+            // };
+            // Console.WriteLine(myDictionary["Dairy"][1]);
         }
     }
 }
