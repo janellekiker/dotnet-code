@@ -20,18 +20,67 @@ namespace HelloWorld
 
             DateTime rightNow = dbConnection.QuerySingle<DateTime>(sqlCommand);
 
-            Console.WriteLine(rightNow);
+            Console.WriteLine(rightNow.ToString());
 
             // // Declare an instance
-            // Computer myComputer = new Computer()
-            // {
-            //     Motherboard = "Z690",
-            //     HasWifi = true,
-            //     hasLTE = false,
-            //     ReleaseDate = DateTime.Now,
-            //     Price = 954.87m,
-            //     VideoCard = "TRX 2060"
-            // };
+            Computer myComputer = new Computer()
+            {
+                Motherboard = "Z690",
+                HasWifi = true,
+                hasLTE = false,
+                ReleaseDate = DateTime.Now,
+                Price = 954.87m,
+                VideoCard = "TRX 2060"
+            };
+
+            // Insert to database
+            string sql = @"INSERT INTO TutorialAppSchema.Computer (
+                Motherboard,
+                HasWifi,
+                hasLTE,
+                ReleaseDate,
+                Price ,
+                VideoCard
+            ) VALUES ('" + myComputer.Motherboard
+                + "','" + myComputer.HasWifi
+                + "','" + myComputer.hasLTE
+                + "','" + myComputer.ReleaseDate
+                + "','" + myComputer.Price
+                + "','" + myComputer.VideoCard
+            + "')";
+
+            Console.WriteLine(sql);
+
+            int result = dbConnection.Execute(sql);
+            Console.WriteLine(result);
+
+            // Select from Database
+            string sqlSelect = @"
+            SELECT
+                Motherboard,
+                HasWifi,
+                hasLTE,
+                ReleaseDate,
+                Price ,
+                VideoCard
+            FROM TutorialAppSchema.Computer";
+
+            // Print each row in the database
+            IEnumerable<Computer> computers = dbConnection.Query<Computer>(sqlSelect);
+
+            Console.WriteLine("'Motherboard', 'HasWifi', 'hasLTE', 'ReleaseDate', 'Price', 'VideoCard'");
+            foreach(Computer singleComputer in computers)
+            {
+                Console.WriteLine("'" + myComputer.Motherboard
+                + "','" + myComputer.HasWifi
+                + "','" + myComputer.hasLTE
+                + "','" + myComputer.ReleaseDate
+                + "','" + myComputer.Price
+                + "','" + myComputer.VideoCard
+            + "'");
+            }
+
+
             // myComputer.HasWifi = false;
             // Console.WriteLine(myComputer.Motherboard);
             // Console.WriteLine(myComputer.HasWifi);

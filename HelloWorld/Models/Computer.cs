@@ -9,5 +9,6 @@ namespace HelloWorld.Models
         public DateTime ReleaseDate { get; set; }
         public decimal Price { get; set; }
         public string VideoCard { get; set; } = "";
+
     }
 }
