@@ -1,10 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System;
-using System.Data;
-using Dapper;
 using HelloWorld.Models;
-using Microsoft.Data.SqlClient;
+using HelloWorld.Data;
 
 namespace HelloWorld
 {
@@ -12,28 +9,26 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            // Connect to Database
-            string connectionString = "Server=localhost;Database=DotNetCourseDatabase;TrustServerCertificate=true;Trusted_Connection=false;User Id=SA;Password=SQLConnect1;";
+            // Now we have access to our dapper class and all it's methods
+            DataContextDapper dapper = new DataContextDapper();
 
-            IDbConnection dbConnection = new SqlConnection(connectionString);
-            string sqlCommand = "SELECT GETDATE()";
 
-            DateTime rightNow = dbConnection.QuerySingle<DateTime>(sqlCommand);
+            DateTime rightNow = dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
 
             Console.WriteLine(rightNow.ToString());
 
-            // // Declare an instance
+            // Declare an instance
             Computer myComputer = new Computer()
             {
-                Motherboard = "Z690",
+                Motherboard = "Z692",
                 HasWifi = true,
-                hasLTE = false,
+                hasLTE = true,
                 ReleaseDate = DateTime.Now,
-                Price = 954.87m,
+                Price = 999.87m,
                 VideoCard = "TRX 2060"
             };
 
-            // Insert to database
+            // Data to insert to database
             string sql = @"INSERT INTO TutorialAppSchema.Computer (
                 Motherboard,
                 HasWifi,
@@ -49,24 +44,23 @@ namespace HelloWorld
                 + "','" + myComputer.VideoCard
             + "')";
 
-            Console.WriteLine(sql);
-
-            int result = dbConnection.Execute(sql);
+            // Command to insert the data to the database
+            bool result = dapper.ExecuteSql(sql);
             Console.WriteLine(result);
 
             // Select from Database
             string sqlSelect = @"
             SELECT
-                Motherboard,
-                HasWifi,
-                hasLTE,
-                ReleaseDate,
-                Price ,
-                VideoCard
+                Computer.Motherboard,
+                Computer.HasWifi,
+                Computer.hasLTE,
+                Computer.ReleaseDate,
+                Computer.Price ,
+                Computer.VideoCard
             FROM TutorialAppSchema.Computer";
 
             // Print each row in the database
-            IEnumerable<Computer> computers = dbConnection.Query<Computer>(sqlSelect);
+            IEnumerable<Computer> computers = dapper.LoadData<Computer>(sqlSelect);
 
             Console.WriteLine("'Motherboard', 'HasWifi', 'hasLTE', 'ReleaseDate', 'Price', 'VideoCard'");
             foreach(Computer singleComputer in computers)
@@ -79,13 +73,6 @@ namespace HelloWorld
                 + "','" + myComputer.VideoCard
             + "'");
             }
-
-
-            // myComputer.HasWifi = false;
-            // Console.WriteLine(myComputer.Motherboard);
-            // Console.WriteLine(myComputer.HasWifi);
-            // Console.WriteLine(myComputer.ReleaseDate);
-            // Console.WriteLine(myComputer.VideoCard);
 
         }
     }
