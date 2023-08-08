@@ -51,57 +51,6 @@ namespace HelloWorld
                 + "','" + myComputer.VideoCard
             + "')";
 
-            // Command to insert the data to the database
-            bool result = dapper.ExecuteSql(sql);
-            Console.WriteLine(result);
-
-            // Select from Database
-            string sqlSelect = @"
-            SELECT
-                Computer.ComputerId,
-                Computer.Motherboard,
-                Computer.HasWifi,
-                Computer.hasLTE,
-                Computer.ReleaseDate,
-                Computer.Price ,
-                Computer.VideoCard
-            FROM TutorialAppSchema.Computer";
-
-            // Print each row in the database
-            IEnumerable<Computer> computers = dapper.LoadData<Computer>(sqlSelect);
-
-            Console.WriteLine("'ComputerId', 'Motherboard', 'HasWifi', 'hasLTE', 'ReleaseDate', 'Price', 'VideoCard'");
-            foreach(Computer singleComputer in computers)
-            {
-                Console.WriteLine("'" + singleComputer.ComputerId
-                + "','" + singleComputer.Motherboard
-                + "','" + singleComputer.HasWifi
-                + "','" + singleComputer.hasLTE
-                + "','" + singleComputer.ReleaseDate
-                + "','" + singleComputer.Price
-                + "','" + singleComputer.VideoCard
-            + "'");
-            }
-
-            // Entity Framework
-            IEnumerable<Computer>? computersEf = entityFramework.Computer?.ToList<Computer>();
-
-            if(computersEf != null)
-            {
-                Console.WriteLine("'ComputerId', 'Motherboard', 'HasWifi', 'hasLTE', 'ReleaseDate', 'Price', 'VideoCard'");
-                foreach(Computer singleComputer in computersEf)
-                {
-                    Console.WriteLine("'" + singleComputer.ComputerId
-                    + "','" + singleComputer.Motherboard
-                    + "','" + singleComputer.HasWifi
-                    + "','" + singleComputer.hasLTE
-                    + "','" + singleComputer.ReleaseDate
-                    + "','" + singleComputer.Price
-                    + "','" + singleComputer.VideoCard
-                + "'");
-                }
-            }
-
         }
     }
 }
