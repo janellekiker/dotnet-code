@@ -2,6 +2,7 @@
 
 using HelloWorld.Models;
 using HelloWorld.Data;
+using Microsoft.Extensions.Configuration;
 
 namespace HelloWorld
 {
@@ -9,9 +10,13 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
             // Now we have access to our dapper class and all it's methods
-            DataContextDapper dapper = new DataContextDapper();
-            DataContextEF entityFramework = new DataContextEF();
+            DataContextDapper dapper = new DataContextDapper(config);
+            DataContextEF entityFramework = new DataContextEF(config);
 
             DateTime rightNow = dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
             Console.WriteLine(rightNow.ToString());

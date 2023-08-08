@@ -62,3 +62,10 @@
 /Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/janellekiker/Desktop/dotnet-code/HelloWorld/obj/Debug/net7.0/HelloWorld.csproj.CopyComplete
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/Microsoft.Extensions.Configuration.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/Microsoft.Extensions.FileProviders.Physical.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/Users/janellekiker/Desktop/dotnet-code/HelloWorld/bin/Debug/net7.0/appsettings.json
